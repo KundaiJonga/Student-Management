@@ -32,14 +32,13 @@ public class StudentService {
         return studentRepository.findById(studentId).get();
     }
 
-    public Student updateStudent(StudentRequestDto dto, int studentId){
+    public String updateStudent(StudentRequestDto dto, int studentId){
         Student s = studentRepository.findById(studentId).get();
         s.setStudentName(dto.getStudentName());
         s.setMarks(dto.getMarks());
         s.setAddress(dto.getAddress());
-         studentRepository.save(s);
-         return "successfully updated!";
-
+        studentRepository.save(s);
+        return "Student updated successfully";
     }
 
     public String deleteStudentById(int studentId){
