@@ -37,7 +37,8 @@ public class StudentService {
         s.setStudentName(dto.getStudentName());
         s.setMarks(dto.getMarks());
         s.setAddress(dto.getAddress());
-        return studentRepository.save(s);
+         studentRepository.save(s);
+         return "successfully updated!";
 
     }
 
